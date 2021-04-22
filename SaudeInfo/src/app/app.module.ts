@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table'
 import{MatRadioModule} from '@angular/material/radio'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSortModule} from '@angular/material/sort'
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { ReceitaReadComponent } from './components/receita/receita-read/receita-read.component';
@@ -69,7 +70,8 @@ import { TopbarComponent } from './components/template/topbar/topbar.component'
     MatTableModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
