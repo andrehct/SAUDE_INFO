@@ -17,12 +17,20 @@ export class UserCrudComponent implements OnInit {
     senha: ''
   }
 
+  passou: boolean = false;
+
   ngOnInit(): void {
   }
 
   navigateToHome(): void{
-    this.userService.setUsu(this.user);
-    this.router.navigate(['home'])
+    if(this.user.login == '' || !this.user.login)
+    {
+      this.passou = true;
+    }
+    else{
+      this.userService.setUsu(this.user);
+      this.router.navigate(['home'])
+    }
   }
 
 }

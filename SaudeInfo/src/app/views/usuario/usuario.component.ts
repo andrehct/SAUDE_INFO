@@ -9,15 +9,12 @@ import { UserService } from '../user-crud/user.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario: User= { //apagar os dados iniciais quando for na vera
-    login: 'teste123',
-    senha: 'senha123'
-  };
+  usuario: User;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    //this.usuario = this.userService.getUsu(); //descomentar quando for na vera
+    this.usuario = this.userService.getUsu();
   }
 
   atualizarUsu(){

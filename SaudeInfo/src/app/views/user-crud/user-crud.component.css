@@ -31,3 +31,8 @@ button{
     bottom: 8%;
     position: absolute;
 }
+.mat-error{
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 17%;
+}

@@ -15,6 +15,9 @@
     <button mat-raised-button (click)="navigateToHome()" color="primary">
         Entrar
     </button>
+    <mat-error *ngIf="passou">
+        Favor preencher o campo <strong>usuário</strong>
+    </mat-error>
 </div>
 
 
