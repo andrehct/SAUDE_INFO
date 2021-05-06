@@ -14,6 +14,10 @@ export class ReceitaService {
     this.receita = rec;
   }
 
+  limparReceita(){
+    this.receita = null;
+  }
+
   getReceita(){
     return this.receita;
   }

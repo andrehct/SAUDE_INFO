@@ -1,3 +1,21 @@
 table{
-    width: 100%;
+    width: 95%;
+    margin-left: 2.4%;
+    margin-top: 5%;
 }
+th{
+    background-color: blueviolet;
+    align-items: center;
+    color: #FFF;
+    font-size: 1rem;
+}
+td{
+    font-size: 1rem;  
+}
+.mat-row:nth-child(even){
+    background-color: #FFF;
+}
+        
+.mat-row:nth-child(odd){
+    background-color: lightblue;
+} 

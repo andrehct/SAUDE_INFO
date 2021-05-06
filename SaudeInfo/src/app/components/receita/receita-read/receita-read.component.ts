@@ -16,6 +16,7 @@ export class ReceitaReadComponent implements OnInit {
    receitas: RECEITA[];
 
   displayedColumns = ['remedio', 'inicio', 'horario'];
+  displayedColumns2 = ['remedio', 'periodo', 'duracao'];
 
 
   constructor(private receitaReadService: ReceitaReadService, private receitaService: ReceitaService, private alarmeBuildService:AlarmeBuildService) {
@@ -31,8 +32,8 @@ export class ReceitaReadComponent implements OnInit {
   
   lerQr(): void 
   {
-    //Ler receita do arquivo json
-    this.receitaReadService.read().subscribe(receitaRetornada => {
+    //Ler receita do arquivo json com concatenação
+    /*this.receitaReadService.read().subscribe(receitaRetornada => {
       if(this.receitas)
       {
         this.receitas=receitaRetornada.concat(this.receitas);
@@ -41,6 +42,11 @@ export class ReceitaReadComponent implements OnInit {
       {
         this.receitas=receitaRetornada;
       }
+      this.receitaService.setReceita(this.receitas);
+    });*/
+    //Ler receita do arquivo json sem concatenação
+    this.receitaReadService.read().subscribe(receitaRetornada => {
+      this.receitas=receitaRetornada;
       this.receitaService.setReceita(this.receitas);
     });
   }
@@ -67,6 +73,16 @@ export class ReceitaReadComponent implements OnInit {
       //retirar o remedio da lista
       this.receitas = this.receitas.filter(el => el.REMEDIO != e.REMEDIO)
     })
-    this.receitaService.setReceita(this.receitas);
+    //Ajustar os medicamentos que ainda não foram iniciados para que quando
+    //voltem na tela estejam apenas eles
+    if(this.receitas.length > 0)
+    {
+      this.receitaService.setReceita(this.receitas);
+    }
+    else
+    {
+      this.receitas = null;
+      this.receitaService.limparReceita();
+    }
   }
 }
