@@ -21,3 +21,11 @@ td{
     font-size: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.obs{
+    padding-top: 3%;
+    padding-left: 5%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
